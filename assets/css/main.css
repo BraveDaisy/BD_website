@@ -19,8 +19,14 @@
     z-index: 100;
     position: relative;
     text-align: center;
+    min-height: 100vh; /* Ensures the content is at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    box-sizing: border-box; /* Ensures padding doesn't mess with the layout */
 }
 
+/* Band name */
 #band-name {
     color: #ed6d64; /* Band name color */
     font-family: 'Righteous', sans-serif; /* Custom font */
@@ -81,26 +87,17 @@ iframe {
         max-width: 100%;
     }
 
-
-	/* Global styles for body */
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-image: url('images/owen_bg.jpg'); /* Replace with your background image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    background-attachment: fixed; /* This will make the background fixed on larger screens */
-}
-
-/* Media query for mobile */
-@media only screen and (max-width: 736px) {
-    body {
-        background-attachment: fixed; /* Default behavior for mobile, prevents background from moving */
+    /* Make the page longer on mobile so users can scroll */
+    #content {
+        min-height: 120vh; /* Make the content area longer so users can scroll past it */
     }
 
+    /* Adjust background image behavior on mobile */
+    body {
+        background-attachment: scroll; /* Prevent the background from moving on mobile */
+    }
+
+    /* Adjust font and layout for mobile */
     h1 {
         font-size: 2rem; /* Adjust font size for mobile */
     }
@@ -116,6 +113,4 @@ body {
     iframe {
         height: 300px; /* Adjust iframe size for mobile */
     }
-}
-
 }
