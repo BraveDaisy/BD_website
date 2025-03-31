@@ -80,4 +80,42 @@ iframe {
     iframe {
         max-width: 100%;
     }
+
+
+	/* Global styles for body */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('images/owen_bg.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    background-attachment: fixed; /* This will make the background fixed on larger screens */
+}
+
+/* Media query for mobile */
+@media only screen and (max-width: 736px) {
+    body {
+        background-attachment: scroll; /* Default behavior for mobile, prevents background from moving */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+
+    .album-image img {
+        max-width: 100%;  /* Ensures album image scales well on mobile */
+    }
+
+    .new-releases {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+
+    iframe {
+        height: 300px; /* Adjust iframe size for mobile */
+    }
+}
+
 }
