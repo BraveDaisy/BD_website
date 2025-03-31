@@ -68,7 +68,7 @@ iframe {
     .new-releases {
         font-size: 1.2em;
         text-align: center;
-        margin: 10px 0; /* Reduced margin to bring it closer to the album cover */
+        margin: 5px 0; /* Reduced margin to bring it closer to the album cover */
     }
 
     /* Ensure the album cover remains centered and resized properly */
@@ -85,6 +85,17 @@ iframe {
 
     iframe {
         height: 300px; /* Adjust iframe size for mobile */
+    }
+
+    /* Move everything up for mobile */
+    #band-name, #album-cover, .new-releases, .track-container {
+        margin-top: 0; /* Remove any additional top margin */
+        padding-top: 0; /* Ensure no additional padding is applied */
+    }
+
+    /* Adjust overall page layout */
+    #page-wrapper {
+        justify-content: flex-start; /* Push content towards the top */
     }
 }
 
