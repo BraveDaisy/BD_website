@@ -26,6 +26,7 @@
     font-family: 'Righteous', sans-serif; /* Custom font */
     font-size: 4em; /* Adjust as needed */
     margin: 0.5em 0;
+    white-space: nowrap; /* Prevent line breaks */
 }
 
 /* Custom styles for album cover */
@@ -47,8 +48,8 @@
 /* Embedded Spotify Track Styling */
 .track-container {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 0; /* Removed margin to ensure it’s right under the new releases */
+    padding: 0;    /* Removed padding to minimize the space */
 }
 
 iframe {
@@ -74,13 +75,13 @@ iframe {
     /* Ensure the album cover remains centered and resized properly */
     #album-cover {
         max-height: 250px;  /* Adjust for smaller mobile view */
-        margin-bottom: 10px; /* Reduced bottom margin to bring the elements closer */
+        margin-bottom: 5px; /* Reduced bottom margin to bring the elements closer */
     }
 
     /* Ensure Spotify iframe remains centered and closer to the album cover */
     .track-container {
-        margin-top: 10px; /* Reduced margin to bring it closer to the "New Releases" */
-        padding: 10px;    /* Reduced padding */
+        margin-top: 0; /* Ensure no space between "New Releases" and Spotify iframe */
+        padding: 0;    /* Removed padding for minimal gap */
     }
 
     iframe {
@@ -96,6 +97,17 @@ iframe {
     /* Adjust overall page layout */
     #page-wrapper {
         justify-content: flex-start; /* Push content towards the top */
+    }
+
+    /* Ensure "Brave Daisy" stays on one line */
+    #band-name {
+        font-size: 2em; /* Adjust size for mobile */
+        white-space: nowrap; /* Prevent wrapping of the band name */
+    }
+
+    /* Make the background image larger on mobile */
+    #page-wrapper {
+        background-size: 150% auto; /* Increase the background image size */
     }
 }
 
