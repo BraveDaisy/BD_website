@@ -19,12 +19,6 @@
     z-index: 100;
     position: relative;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; /* Keeps the elements spaced evenly */
-    padding: 20px;
-    min-height: 200vh; /* Makes the content area twice as long */
-    box-sizing: border-box; /* Ensures padding doesn't mess with the layout */
 }
 
 #band-name {
@@ -87,33 +81,6 @@ iframe {
     .track-container {
         margin-top: 10px; /* Reduced margin to bring it closer to the "New Releases" */
         padding: 10px;    /* Reduced padding */
-    }
-
-    iframe {
-        height: 300px; /* Adjust iframe size for mobile */
-    }
-
-    /* Make the page twice as long on mobile so users can scroll */
-    #content {
-        min-height: 200vh; /* Make the content area twice as long */
-    }
-
-    /* Adjust background image behavior on mobile */
-    body {
-        background-attachment: scroll; /* Prevent the background from moving on mobile */
-    }
-
-    /* Adjust font and layout for mobile */
-    h1 {
-        font-size: 2rem; /* Adjust font size for mobile */
-    }
-
-    .album-image img {
-        max-width: 100%;  /* Ensures album image scales well on mobile */
-    }
-
-    .new-releases {
-        font-size: 1.2rem; /* Adjust font size for mobile */
     }
 
     iframe {
