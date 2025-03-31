@@ -2,23 +2,20 @@
 <html lang="en">
 
 <head>
-
-
-	
-		<!-- Fonts -->
-	
-	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Band Landing Page</title>
     <link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background-image: url('images/owen_bg.jpg'); /* Replace with your background image */
+            background-image: url('images/owen_bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -34,7 +31,7 @@
         }
 
         #content {
-            background: rgba(0, 0, 0, 0.6); /* Adds a dark overlay for readability */
+            background: rgba(0, 0, 0, 0.6);
             padding: 30px;
             border-radius: 15px;
         }
@@ -42,6 +39,7 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            white-space: nowrap;
         }
 
         .album-image {
@@ -55,43 +53,100 @@
             margin-bottom: 20px;
         }
 
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100px;
-            margin-top: 20px;
+        .track-container {
+            display: none;
+            margin-top: 15px;
         }
+
+		.song-list li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			background: rgba(255, 255, 255, 0.1);
+			padding: 10px 15px;
+			border-radius: 10px;
+		}
+
+		.album-art {
+			width: 60px;
+			height: 60px;
+			border-radius: 5px;
+		}
+
+		.song-name {
+			font-size: 1.2rem;
+			font-weight: bold;
+			white-space: nowrap;
+		}
+
+		.spotify-logo {
+			width: 30px;
+			height: 30px;
+		}
+
+		.play-button {
+			background-color: #1DB954;
+			color: white;
+			border: none;
+			padding: 8px 12px;
+			cursor: pointer;
+			border-radius: 5px;
+			font-weight: bold;
+		}
+
+		@media (max-width: 768px) {
+			.song-list {
+				flex-direction: column;
+			}
+
+			.song-list li {
+				flex-direction: row;
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			.album-art, .spotify-logo {
+				width: 50px;
+				height: 50px;
+			}
+
+			.play-button {
+				padding: 6px 10px;
+			}
+		}
+
     </style>
 
-	
-	<!-- Meta Pixel Code -->
-	<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '543086331719894');
-		fbq('track', 'PageView');
-		</script>
-		<noscript><img height="1" width="1" style="display:none"
-		src="https://www.facebook.com/tr?id=543086331719894&ev=PageView&noscript=1"
-		/></noscript>
-		<!-- End Meta Pixel Code -->	
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '543086331719894');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=543086331719894&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
 </head>
+
 <body>
 
     <div id="page-wrapper">
         <div id="content">
             <!-- Band Name -->
-			<h1 id="band-name">BRAVE DAISY</h1>
+            <h1 id="band-name">BRAVE DAISY</h1>
 
             <!-- Album Image -->
             <div class="album-image">
-				<img id="album-cover" src="images/another_man_cover.jpg" alt="Album Cover">
+                <img id="album-cover" src="images/another_man_cover.jpg" alt="Album Cover">
             </div>
 
             <!-- New Releases Section -->
@@ -99,14 +154,38 @@
                 <p>New Releases</p>
             </div>
 
-            <!-- Embedded Spotify Song -->
-        	<div class="track-container">
-            	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        	</div>
+            <!-- Song List -->
+            <ul class="song-list">
+                <li>
+                    <img src="images/another_man_cover.jpg" alt="Album Cover" class="album-art">
+                    <span class="song-name">Another Man</span>
+                    <img src="images/Spotify_icon.png" alt="Spotify Logo" class="spotify-logo">
+                    <button class="play-button" onclick="playSong()">▶ Play</button>
+                </li>
+            </ul>
+
+            <!-- Hidden Spotify Player -->
+            <div id="spotify-embed" class="track-container">
+                <iframe id="spotify-frame" 
+                    src="https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz?utm_source=generator"
+                    width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+            </div>
 
         </div>
     </div>
 
+    <script>
+        function playSong() {
+            let embed = document.getElementById("spotify-embed");
+            embed.style.display = "block"; // Show the player
+            
+            // Track event in Meta Pixel
+            fbq('track', 'PlaySong');
+        }
+    </script>
+
+    <!-- Additional Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
