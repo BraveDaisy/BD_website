@@ -98,7 +98,7 @@ body {
 /* Media query for mobile */
 @media only screen and (max-width: 736px) {
     body {
-        background-attachment: scroll; /* Default behavior for mobile, prevents background from moving */
+        background-attachment: fixed; /* Default behavior for mobile, prevents background from moving */
     }
 
     h1 {
