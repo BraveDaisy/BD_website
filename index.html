@@ -160,32 +160,36 @@
                     <img src="images/another_man_cover.jpg" alt="Album Cover" class="album-art">
                     <span class="song-name">Another Man</span>
                     <img src="images/Spotify_icon.png" alt="Spotify Logo" class="spotify-logo">
-                    <button class="play-button" onclick="playSong()">▶ Play</button>
+					<button class="play-button" onclick="playSong()">▶ Play</button>
+
                 </li>
             </ul>
 
             <!-- Hidden Spotify Player -->
-            <div id="spotify-embed" class="track-container">
-                <iframe id="spotify-frame" 
-                    src="https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz?utm_source=generator"
-                    width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-                </iframe>
-            </div>
+			<div id="spotify-container" style="display: none;">
+				<iframe id="spotify-player" style="border-radius:12px" 
+					src="https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz" 
+					width="100%" height="152" frameBorder="0" 
+					allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+					loading="lazy">
+				</iframe>
+			</div>
+			
 
         </div>
     </div>
 
     <script>
 		function playSong() {
-			let spotifyIframe = document.getElementById('spotify-player');
-			let trackUrl = "https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz?utm_source=generator&autoplay=1"; 
-			
-			// Update the iframe source to autoplay the song
-			spotifyIframe.src = trackUrl;
+			let trackUrl = "https://open.spotify.com/track/2kxwm9yLV5yK7L8GpkrUiz?autoplay=1";
 
-			// Make the Spotify embed visible
+			// Open in a new tab (ensures it plays)
+			window.open(trackUrl, "_blank");
+
+			// Show embedded player (if not visible)
 			document.getElementById('spotify-container').style.display = 'block';
 		}
+        
     </script>
 
     <!-- Additional Scripts -->
