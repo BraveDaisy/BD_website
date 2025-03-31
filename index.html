@@ -176,13 +176,16 @@
     </div>
 
     <script>
-        function playSong() {
-            let embed = document.getElementById("spotify-embed");
-            embed.style.display = "block"; // Show the player
-            
-            // Track event in Meta Pixel
-            fbq('track', 'PlaySong');
-        }
+		function playSong() {
+			let spotifyIframe = document.getElementById('spotify-player');
+			let trackUrl = "https://open.spotify.com/embed/track/2kxwm9yLV5yK7L8GpkrUiz?utm_source=generator&autoplay=1"; 
+			
+			// Update the iframe source to autoplay the song
+			spotifyIframe.src = trackUrl;
+
+			// Make the Spotify embed visible
+			document.getElementById('spotify-container').style.display = 'block';
+		}
     </script>
 
     <!-- Additional Scripts -->
