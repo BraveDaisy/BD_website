@@ -3339,3 +3339,29 @@ input, select, textarea {
 			}
 
 	}
+
+	/* Custom styles for album cover */
+#album-cover {
+    max-width: 100%;  /* Ensures it doesn't stretch beyond its container */
+    max-height: 400px; /* Adjust this value to your desired height */
+    width: auto;      /* Keeps the aspect ratio intact */
+    margin: 20px auto; /* Centers the album cover horizontally with some margin */
+    display: block;   /* Makes sure it's treated as a block-level element */
+}
+
+#band-name {
+    color: #ed6d64; /* Replace with your desired color */
+    font-family: 'Righteous', sans-serif; /* Apply the custom font */
+}
+
+.track-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+iframe {
+    border-radius: 12px;
+}
+
+
