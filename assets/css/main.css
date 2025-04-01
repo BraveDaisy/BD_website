@@ -146,53 +146,66 @@ body {
         height: 300px;
     }
 
-    /* Center the song list and keep it inside the container */
+    /* Ensure the song list container is large enough */
+    .song-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%; /* Ensure it's wide enough */
+        max-width: 400px; /* Keep it within a reasonable size */
+        margin: 0 auto;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.6); /* Keeps the grey background */
+        border-radius: 10px;
+    }
+
+    /* Make sure the list items are centered */
     .song-list {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;
         width: 100%;
-        max-width: 90%; /* Prevent overflow */
-        margin: 0 auto;
+        margin: 0;
         padding: 0;
     }
 
     .song-list li {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 8px; /* Spacing between items */
+        justify-content: space-between;
+        gap: 8px;
         width: 100%;
-        max-width: 90%;
         padding: 8px;
         flex-wrap: nowrap;
     }
 
+    /* Adjust the song title to prevent overflow */
     .song-title {
-        font-size: 10px; /* Make the song title smaller */
+        font-size: 12px; /* Small enough to fit */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 35%; /* Prevent title from taking too much space */
+        max-width: 40%; /* Prevents title from taking too much space */
         text-align: center;
     }
 
+    /* Ensure images/icons fit properly */
     .song-list img {
-        max-width: 40px; /* Keep the album cover small */
+        max-width: 50px;
     }
 
     .spotify-icon {
-        width: 20px; /* Keep Spotify icon consistent */
+        width: 24px;
         height: auto;
     }
 
     .spotify-play-btn {
-        padding: 5px 8px;
-        font-size: 10px;
+        padding: 6px 10px;
+        font-size: 12px;
         white-space: nowrap;
         text-align: center;
-        max-width: 60px; /* Prevent button from stretching */
+        max-width: 70px;
     }
 }
