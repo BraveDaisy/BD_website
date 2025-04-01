@@ -154,7 +154,8 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 100%;
+        width: 90%; /* Prevents overflow off the screen */
+        margin: 0 auto; /* Ensures centering */
     }
 
     .song-list li {
@@ -164,6 +165,14 @@ body {
         gap: 10px; /* Space between elements */
         width: 100%;
         padding: 10px;
+        flex-wrap: wrap; /* Allows elements to wrap properly */
+    }
+
+    .song-title {
+        font-size: 14px; /* Smaller font for long song titles */
+        word-wrap: break-word; /* Ensures long titles wrap */
+        max-width: 60%; /* Prevents titles from taking too much space */
+        text-align: center;
     }
 
     .song-list img {
