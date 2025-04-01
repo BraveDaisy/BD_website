@@ -146,7 +146,7 @@ body {
         height: 300px;
     }
 
-    /* Center the song list */
+    /* Center the song list and keep it inside the container */
     .song-list {
         display: flex;
         flex-direction: column;
@@ -154,25 +154,28 @@ body {
         justify-content: center;
         text-align: center;
         width: 100%;
+        max-width: 90%; /* Prevent overflow */
         margin: 0 auto;
+        padding: 0;
     }
 
     .song-list li {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px; /* Space between elements */
-        width: 90%;
-        padding: 0px;
+        gap: 8px; /* Spacing between items */
+        width: 100%;
+        max-width: 90%;
+        padding: 8px;
         flex-wrap: nowrap;
     }
 
     .song-title {
-        font-size: 10px; /* Make the song title even smaller */
-        white-space: wrap;
+        font-size: 10px; /* Make the song title smaller */
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 30%; /* Prevent title from taking too much space */
+        max-width: 35%; /* Prevent title from taking too much space */
         text-align: center;
     }
 
@@ -181,7 +184,7 @@ body {
     }
 
     .spotify-icon {
-        width: 20px; /* Adjust Spotify icon size */
+        width: 20px; /* Keep Spotify icon consistent */
         height: auto;
     }
 
@@ -190,5 +193,6 @@ body {
         font-size: 10px;
         white-space: nowrap;
         text-align: center;
+        max-width: 60px; /* Prevent button from stretching */
     }
 }
