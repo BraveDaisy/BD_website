@@ -128,59 +128,62 @@ body {
 /* Media query for mobile */
 @media only screen and (max-width: 736px) {
     body {
-        background-attachment: fixed; /* Default behavior for mobile, prevents background from moving */
+        background-attachment: fixed;
     }
 
     h1 {
-        font-size: 2rem; /* Adjust font size for mobile */
+        font-size: 2rem;
     }
 
     .album-image img {
-        max-width: 100%;  /* Ensures album image scales well on mobile */
+        max-width: 100%;
     }
 
     .new-releases {
-        font-size: 1.2rem; /* Adjust font size for mobile */
+        font-size: 1.2rem;
     }
 
     iframe {
-        height: 300px; /* Adjust iframe size for mobile */
+        height: 300px;
     }
 
-    /* Centering song list on mobile */
+    /* Center the song list */
     .song-list {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 90%; /* Prevents overflow off the screen */
-        margin: 0 auto; /* Ensures centering */
+        width: 100%;  /* Ensures the list stays centered */
+        margin: 0 auto;
     }
 
     .song-list li {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px; /* Space between elements */
-        width: 100%;
+        gap: 5px; /* Reduce space between elements */
+        width: 90%; /* Keep everything inside the screen */
         padding: 10px;
-        flex-wrap: wrap; /* Allows elements to wrap properly */
+        flex-wrap: nowrap; /* Prevents wrapping onto new lines */
     }
 
     .song-title {
-        font-size: 14px; /* Smaller font for long song titles */
-        word-wrap: break-word; /* Ensures long titles wrap */
-        max-width: 60%; /* Prevents titles from taking too much space */
-        text-align: center;
+        font-size: 12px; /* Make the song title smaller */
+        white-space: nowrap; /* Prevents the song title from wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Adds "..." if the title is too long */
+        max-width: 35%; /* Prevents title from taking too much space */
+        text-align: left;
     }
 
     .song-list img {
-        max-width: 50px; /* Adjust album cover size */
+        max-width: 40px; /* Adjust album cover size */
     }
 
     .spotify-play-btn {
-        padding: 8px 12px;
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 12px;
+        white-space: nowrap;
     }
 }
