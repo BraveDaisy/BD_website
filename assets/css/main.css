@@ -125,7 +125,6 @@ body {
 }
 
 /* Media query for mobile */
-/* Media query for mobile */
 @media only screen and (max-width: 736px) {
     body {
         background-attachment: fixed;
@@ -154,7 +153,7 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 100%;  /* Ensures the list stays centered */
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -162,28 +161,34 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px; /* Reduce space between elements */
-        width: 90%; /* Keep everything inside the screen */
+        gap: 10px; /* Space between elements */
+        width: 90%;
         padding: 10px;
-        flex-wrap: nowrap; /* Prevents wrapping onto new lines */
+        flex-wrap: nowrap;
     }
 
     .song-title {
-        font-size: 12px; /* Make the song title smaller */
-        white-space: nowrap; /* Prevents the song title from wrapping */
+        font-size: 10px; /* Make the song title even smaller */
+        white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; /* Adds "..." if the title is too long */
-        max-width: 35%; /* Prevents title from taking too much space */
-        text-align: left;
+        text-overflow: ellipsis;
+        max-width: 30%; /* Prevent title from taking too much space */
+        text-align: center;
     }
 
     .song-list img {
-        max-width: 40px; /* Adjust album cover size */
+        max-width: 40px; /* Keep the album cover small */
+    }
+
+    .spotify-icon {
+        width: 20px; /* Adjust Spotify icon size */
+        height: auto;
     }
 
     .spotify-play-btn {
-        padding: 6px 10px;
-        font-size: 12px;
+        padding: 5px 8px;
+        font-size: 10px;
         white-space: nowrap;
+        text-align: center;
     }
 }
