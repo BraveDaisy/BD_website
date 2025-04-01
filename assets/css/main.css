@@ -163,13 +163,13 @@ body {
         justify-content: center;
         gap: 10px; /* Space between elements */
         width: 90%;
-        padding: 10px;
+        padding: 0px;
         flex-wrap: nowrap;
     }
 
     .song-title {
-        font-size: 10px; /* Make the song title even smaller */
-        white-space: nowrap;
+        font-size: 6px; /* Make the song title even smaller */
+        white-space: wrap;
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 30%; /* Prevent title from taking too much space */
